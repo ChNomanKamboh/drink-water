@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drink water</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            height:100vh;
+            width:100%;
+            background-color:rgb(50, 50, 190);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .container{
+            height:70%;
+            width:20%;
+            background-color:white;
+            border-bottom-left-radius:30px;
+            border-bottom-right-radius:30px;
+            overflow: hidden;
+            position: relative;
+
+        }
+        .water{
+            height: 100%;
+            width: 100%;
+            /* border: 1px solid #000; */
+            /* border:10PX solid; */
+            /* height:100%; */
+            background-color: aqua;
+            position: absolute;
+            top: 100%;
+            transition-duration:1s;
+        }
+        .count{
+            position: absolute;
+            left:40%;
+            transition-duration:0.5s;
+        }
+        .contain{
+            height:50%;
+            width:30%;
+            /* background-color:white; */
+            display: flex;
+            flex-wrap: wrap;
+            gap:27px;
+        }
+        .tubes{
+            height:40%;
+            width:20%;
+            background-color:white;
+            border-bottom-left-radius:20px;
+            border-bottom-right-radius:20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .active{
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="water">
+                <h1 class="count">0%</h1>
+            </div>
+        </div>
+    <div class="contain">
+    <div class="tubes t1">12.5%</div>
+    <div class="tubes t2">25%</div>
+    <div class="tubes t3">37.5%</div>
+    <div class="tubes t4">50%</div>
+    <div class="tubes t5">62.5%</div>
+    <div class="tubes t6">75%</div>
+    <div class="tubes t7">87.5%</div>
+    <div class="tubes t8">100%</div>
+    </div>
+    </div>
+
+
+
+
+
+    <script>
+        var container=document.querySelector('.container')
+        var tube= document.querySelectorAll('.tubes')
+        console.log(container,tube);
+
+        tube.forEach(function(ele,index){
+            ele.addEventListener('click',function(){
+                console.log('test');
+                for( var x = 0;x<tube.length;x++){
+                        if(x<=index){
+                            tube[x].classList.add("active")
+                        }
+                        else{
+                            tube[x].classList.remove("active")
+                        }
+                    }
+
+            })
+        })
+        var t1=document.querySelector('.t1')
+        var t2=document.querySelector('.t2')
+        var t3=document.querySelector('.t3')
+        var t4=document.querySelector('.t4')
+        var t5=document.querySelector('.t5')
+        var t6=document.querySelector('.t6')
+        var t7=document.querySelector('.t7')
+        var t8=document.querySelector('.t8')
+        var water=document.querySelector('.water')
+        var count=document.querySelector('.count')
+
+        console.log(t1,t8,water,count);
+        t1.addEventListener('click',function(){
+            count.style.top='2%'
+             water.style.top='87.5%'
+             count.innerHTML='12.5%'
+        })
+        t2.addEventListener('click',function(){
+            count.style.top='10%'
+             water.style.top='75%'
+             count.innerHTML='25%'
+
+        })
+        t3.addEventListener('click',function(){
+            count.style.top='16%'
+             water.style.top='62.5%'
+             count.innerHTML='37.5%'
+
+        })
+        t4.addEventListener('click',function(){
+            count.style.top='22%'
+             water.style.top='50%'
+             count.innerHTML='50%'
+
+        })
+        t5.addEventListener('click',function(){
+            count.style.top='28%'
+             water.style.top='37.5%'
+             count.innerHTML='62.5%'
+
+        })
+        t6.addEventListener('click',function(){
+            count.style.top='32%'
+             water.style.top='25%'
+             count.innerHTML='75%'
+
+        })
+        t7.addEventListener('click',function(){
+            count.style.top='38%'
+             water.style.top='12.5%'
+             count.innerHTML='87.5%'
+
+        })
+        t8.addEventListener('click',function(){
+            count.style.top='44%'
+             water.style.top='0%'
+             count.innerHTML='100%'
+
+        })
+
+    </script>
+    
+</body>
+</html>
